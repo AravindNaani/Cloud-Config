@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: "Config-Server"
+
+  profiles:
+    active: git
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: ""
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
