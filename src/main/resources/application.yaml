@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: "ConfigServer"
+
+  profiles:
+    active: git
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: "git@github.com:AravindNaani/ecomm-data.git"
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
+
+eureka:
+  server:
+    fetch-registry: true
+    register-with-eureka: true
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka/"
+
+server:
+    port: 8091
