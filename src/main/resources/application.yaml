@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "Config-Server"
+    name: "ConfigServer"
 
   profiles:
     active: git
@@ -13,6 +13,14 @@ spring:
           timeout: 5
           clone-on-start: true
           force-pull: true
+
+eureka:
+  server:
+    fetch-registry: true
+    register-with-eureka: true
+  client:
+    service-url:
+      defaultZone: "http://localhost:8761/eureka/"
 
 server:
     port: 8091
